@@ -91,7 +91,7 @@
   {\small
    Department of Physics and Nanotechnology,
    [Affiliation], [City], [Country]\\[2pt]
-   \href{mailto:pranav@example.com}{pranav@example.com}
+   \href{mailto:pranavkantgaur@example.com}{pranavkantgaur@example.com}
   }
 
   \vspace{0.4cm}
@@ -100,37 +100,35 @@
 \end{center}
 
 \begin{abstract}
-Plasmonics has undergone a radical transformation over the past decade,
-evolving from the study of passive metallic nanostructures supporting
+Plasmonics has undergone substantial evolution over the past decade,
+broadening from the study of passive metallic nanostructures supporting
 surface plasmon polaritons~(SPPs) and localized surface plasmon
-resonances~(LSPR) into a broad, multidisciplinary field that
-underpins quantum information science, solar energy conversion,
-advanced sensing, and next-generation nanofabrication.  This review
-synthesizes the most significant developments across eight
-interconnected frontiers: (i)~the paradigmatic shift from passive to
+resonances~(LSPR) into a multidisciplinary field that intersects with
+quantum information, solar energy conversion, advanced sensing, and
+nanofabrication.  This review critically synthesises key developments
+across nine interconnected frontiers: (i)~the shift from passive to
 active and reconfigurable plasmonics driven by epsilon-near-zero~(ENZ)
-physics and time-varying media; (ii)~the emergence of alternative
-plasmonic materials---transition metal nitrides, transparent conducting
-oxides, and MXenes---that transcend the limitations of noble metals;
+physics and time-varying media; (ii)~alternative plasmonic materials---
+transition metal nitrides, transparent conducting oxides, and MXenes;
 (iii)~quantum plasmonics and on-chip single-photon sources;
 (iv)~solar energy conversion via plasmonic photocatalysis and
 interfacial solar-steam generation; (v)~wearable
-surface-enhanced Raman spectroscopy~(SERS) and point-of-care
-diagnostics; (vi)~thermal management and loss-mitigation strategies
-for plasmonic integrated circuits; (vii)~active tunable metasurfaces
-employing phase-change materials and hybrid Mie-plasmonic resonators;
-and (viii)~scalable nanofabrication through roll-to-roll nanoimprint
-lithography and artificial-intelligence-assisted design.  For each
-frontier, we identify the key breakthroughs, benchmark performance
-metrics, and outstanding challenges, providing a roadmap for the
-translation of plasmonic research from the laboratory to practical
-devices.
+surface-enhanced Raman spectroscopy~(SERS), tip-enhanced Raman
+spectroscopy~(TERS), and point-of-care diagnostics; (vi)~thermal
+management and loss-mitigation in plasmonic integrated circuits;
+(vii)~active tunable metasurfaces employing phase-change materials and
+hybrid Mie-plasmonic resonators; (viii)~scalable nanofabrication and
+AI-assisted design; and (ix)~van~der~Waals polaritonics and graphene
+plasmonics.  For each frontier we identify key breakthroughs, examine
+the rigour of reported performance claims, highlight outstanding
+controversies, and propose directions for future work.
 
 \medskip\noindent
 \textbf{Keywords:} Surface plasmon polaritons $\cdot$
 Epsilon-near-zero materials $\cdot$ MXenes $\cdot$
 Quantum plasmonics $\cdot$ Active metasurfaces $\cdot$
-Solar energy conversion $\cdot$ SERS $\cdot$ Nanoimprint lithography
+Solar energy conversion $\cdot$ SERS $\cdot$ Graphene plasmonics $\cdot$
+Nanoimprint lithography
 \vspace{0.6cm}
 \end{abstract}
 
@@ -164,12 +162,17 @@ confinement, their fixed geometries limit utility in dynamic applications
 such as optical switching, adaptive lenses, and reconfigurable
 sensors~\cite{shaltout2019spatiotemporal,chen2016metasurface}.
 
-Modern theoretical frameworks now incorporate the \textit{Active
-Metamaterials Roadmap}, which highlights a trajectory towards
-``timetronics'' and ``time crystals''---where material properties are
-modulated not merely in space but also in time---enabling non-reciprocal
-light propagation and the suppression of dissipation through the quantum
-Zeno effect~\cite{zheludev2012from,engheta2013pursuing}.
+Modern theoretical frameworks encompass the \textit{Active
+Metamaterials Roadmap}, which traces a trajectory towards
+``timetronics'' and time-varying electromagnetic
+environments---where material properties are modulated not merely in
+space but also in time---enabling non-reciprocal light propagation and
+Floquet-engineered band structures~\cite{zheludev2012from,engheta2013pursuing,shaltout2019spatiotemporal}.
+It should be noted that the term ``time crystal'' in this photonic
+context refers to periodic temporal modulation of material parameters
+and should not be conflated with the distinct quantum-mechanical concept
+of discrete time-translation symmetry breaking studied in closed quantum
+systems~\cite{zheludev2012from}.
 
 \subsection{The Drude Model and Dynamic Permittivity Engineering}
 
@@ -193,11 +196,19 @@ distances~\cite{alam2016large,liberal2017near}.
 
 The ENZ regime is particularly compelling for active modulation.  When
 $\mathrm{Re}[\varepsilon]\!\approx\!0$, the phase velocity of light
-diverges, enabling uniform phase accumulation across an entire thin film
-regardless of its physical geometry.  This phenomenon, exploited in
-transparent conducting oxide~(TCO) waveguide modulators, allows intensity
-and phase switching with extinction ratios exceeding~45~dB/$\mu$m at
-voltages as low as~$\sim$1~V~\cite{feigenbaum2010unity,alam2016large}.
+diverges while the group velocity remains finite and bounded by
+causality, enabling near-uniform phase accumulation across an entire
+thin film regardless of its physical geometry.  This phenomenon,
+exploited in all-plasmonic Mach-Zehnder modulators and transparent
+conducting oxide~(TCO) waveguide modulators, has enabled on-chip
+intensity modulation with extinction ratios up to $\sim$40~dB and
+energy consumptions below 25~fJ/bit~\cite{haffner2015allplasmonic,alam2016large}.
+It is important to distinguish between the intrinsic
+\textit{nonlinear} index change demonstrated by Alam et al.\ in ITO at
+ENZ~\cite{alam2016large} and the \textit{modulator} performance
+achievable in a full device geometry, which additionally depends on
+overlap integrals, propagation length, and drive-circuit
+parasitics~\cite{haffner2015allplasmonic}.
 
 %% ============================================================
 \section{Advanced Material Systems Beyond Noble Metals}
@@ -226,14 +237,14 @@ NIR = near infrared; Mid-IR = mid infrared.}
 \midrule
 Au, Ag & Visible & Highest $Q$ factors &
   Poor (diffusion) \\
-TiN, ZrN & Vis--NIR & Refractory, high thermal stability &
+TiN, ZrN & Vis--NIR & Refractory, high thermal stability (inert atm.) &
   High (CMOS) \\
 AZO, ITO & NIR & Electrical tunability (ENZ) &
   High (foundry) \\
 Ti$_3$C$_2$T$_x$ & NIR--Mid-IR & Hydrophilic, 2D morphology &
   High (solution) \\
-Kagome FeSn & Mid-IR & Dirac-band conductivity &
-  Emerging \\
+Graphene & THz--Mid-IR & Extreme confinement ($\lambda/300$), gate-tunable (see Sect.~\ref{sec:vdw}) &
+  Moderate (transfer) \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -246,9 +257,15 @@ materials~\cite{guler2015refractory}.  These compounds offer high thermal
 stability and compatibility with standard semiconductor manufacturing,
 making them ideal for high-power applications and integration into silicon
 photonic chips~\cite{guler2015refractory}.  Unlike gold, which melts at
-$\sim$1065\,$^\circ$C, TiN retains its plasmonic properties well above
-2000\,$^\circ$C, opening the door to thermally robust nanophotonic
-devices~\cite{guler2015refractory,boltasseva2011low}.
+$\sim$1065\,$^\circ$C, TiN has a melting point above 2900\,$^\circ$C.
+However, it is important to note that maintaining plasmonic functionality
+at elevated temperatures requires inert or reducing atmospheres: in
+air, TiN begins to oxidise to optically insulating TiO$_2$ above
+$\sim$550\,$^\circ$C, which substantially degrades its plasmonic
+response~\cite{guler2015refractory,boltasseva2011low}.  The thermal
+robustness claim therefore applies specifically to controlled-atmosphere
+applications such as spectrally selective emitters and high-temperature
+photonic chips packaged in inert environments.
 
 In the NIR, transparent conducting oxides such as aluminium-doped zinc
 oxide~(AZO) and indium tin oxide~(ITO) provide a unique platform for
@@ -276,15 +293,21 @@ aqueous processability enables fabrication of plasmonic structures via
 temperature~\cite{gogotsi2019rise,anasori2017mxenes}.
 
 The optical properties of MXenes are highly tunable via surface
-termination chemistry.  Single-layer Ti$_3$C$_2$ and Nb$_4$C$_3$ show
-strong absorption in the infrared~\cite{anasori2017mxenes}, which has been
-exploited for photothermal cancer therapy and solar-driven
-desalination~\cite{lukatskaya2013cation}.  Recent studies have
+termination chemistry.  Single-layer Ti$_3$C$_2$ films exhibit strong
+broadband absorption extending into the near- and mid-infrared, arising
+from their high metallic conductivity and two-dimensional
+morphology~\cite{anasori2017mxenes,naguib2014mxene}.  These properties
+have been exploited for photothermal cancer therapy and solar-driven
+desalination~\cite{gogotsi2019rise}.  Recent studies have
 successfully integrated MXenes as alternative plasmonic coatings in
 one-dimensional photonic crystal platforms to support Tamm plasmon
 polaritons~(TPP)~\cite{kaliteevski2007tamm}, demonstrating high optical
 asymmetry and large high-to-low reflection ratios with minimal dielectric
-layers.
+layers.  A critical caveat is that MXene films are susceptible to
+oxidation in aqueous environments and under prolonged illumination,
+which degrades both electrical conductivity and optical
+response~\cite{gogotsi2019rise}; encapsulation strategies are an active
+research frontier.
 
 %% ============================================================
 \section{Quantum Plasmonics and On-Chip Single-Photon Generation}
@@ -357,12 +380,29 @@ plasmonic coherence across multiple scattering
 events~\cite{fasel2005energy}.
 
 The shift from the traditional biexciton-exciton~(XX-X) cascade to
-spontaneous two-photon emission~(STPE) represents a major conceptual
-advance~\cite{senellart2017high}.  In STPE, a biexciton decays directly
-to the ground state, emitting a photon pair simultaneously.  This
-suppresses multi-pair emission and achieves high brightness per
-excitation pulse, circumventing limitations arising from solid-state
-dephasing in the cascade model~\cite{senellart2017high,lodahl2015interfacing}.
+resonant or phonon-assisted single-excitation schemes represents a
+major practical advance~\cite{senellart2017high}.  In the cascade
+model, sequential two-photon emission from the biexciton through the
+intermediate exciton state is the dominant decay channel; however,
+fine-structure splitting and re-excitation between cascade photons
+impose constraints on entanglement fidelity.  Modern resonant
+excitation techniques suppress these effects, achieving near-transform-limited
+photons with indistinguishabilities exceeding 98\% and
+brightnesses above 57\% directly into a single
+mode~\cite{senellart2017high,lodahl2015interfacing}.
+
+\noindent\textbf{Critical perspective.}  The plasmonic contribution to
+quantum photonic systems carries a fundamental tension: the very
+sub-wavelength confinement that accelerates spontaneous emission
+(Purcell factor $F_\mathrm{P} > 10^3$ in gap modes) also introduces
+Ohmic absorption that reduces the fraction of photons radiated into
+useful modes (the $\beta$-factor).  At room temperature, pure dephasing
+in solid-state emitters further limits single-photon purity.  Most
+demonstrations of quantum interference in plasmonic circuits still
+require cryogenic cooling~\cite{heeres2013quantum}, and a
+room-temperature on-chip plasmonic single-photon source with
+simultaneously high purity, brightness, and indistinguishability
+remains an open challenge.
 
 %% ============================================================
 \section{Solar Energy Conversion and Environmental Remediation}
@@ -384,13 +424,26 @@ band of the semiconductor drives redox reactions under sub-bandgap
 illumination, dramatically extending the spectral utilisation
 window~\cite{cushing2012photocatalytic}.
 
-A notable breakthrough involves \textit{defect repair} in ZnO
-heterojunctions, where individual gold atoms are employed to fill oxygen
-vacancy defects~\cite{cushing2012photocatalytic}.  This passivation
-increases donor charge density and extends photo-electron lifetimes,
-resulting in substantially enhanced hydrogen output rates compared to
-bare ZnO.  The strategy highlights the importance of atomic-scale
-engineering in plasmonic catalysis.
+A notable mechanism involves \textit{hot-electron injection} and
+interface passivation in Au/ZnO heterojunctions.  Cushing et
+al.\ demonstrated that plasmon resonance energy transfer (PRET) from
+gold nanoparticles drives below-bandgap photocatalysis in ZnO,
+with the charge-transfer cross-section dependent on spectral overlap
+between the Au LSPR and the ZnO absorption
+edge~\cite{cushing2012photocatalytic}.  The strategy highlights the
+importance of energy-level engineering at metal-semiconductor
+interfaces in plasmonic catalysis.
+
+\noindent\textbf{Critical perspective.}  A persistent controversy in
+plasmonic photocatalysis concerns whether the apparent rate enhancements
+arise from genuine hot-carrier injection or simply from local
+heating~\cite{linic2011plasmonic}.  Distinguishing between the two
+mechanisms experimentally requires careful control of substrate
+temperature and use of isotopically labelled reactants or ultrafast
+spectroscopy.  Many reported enhancement factors in the literature have
+been obtained under continuous-wave illumination where thermal effects
+are difficult to exclude, casting doubt on the claimed quantum efficiency
+values.
 
 \subsection{Solar-Driven Interfacial Evaporation and Desalination}
 
@@ -403,7 +456,10 @@ benchmarks representative systems.
 \small
 \centering
 \caption{Performance of plasmonic interfacial evaporator systems under
-1-sun illumination~(1~kW/m$^2$).}
+1-sun illumination~(1~kW/m$^2$).  Efficiencies are defined as
+$\eta = \dot{m}\Delta H_\mathrm{vap}/P_\mathrm{solar}$; values
+approaching or exceeding 100\% indicate harvesting of environmental
+enthalpy (conduction/convection) in addition to solar input.}
 \label{tab:evaporator}
 \begin{tabularx}{\columnwidth}{@{}lXX@{}}
 \toprule
@@ -428,6 +484,21 @@ Cu$_{2-x}$S) has pushed light-to-heat conversion efficiencies above
 demonstrating the synergy achievable through plasmonic
 heterostructures~\cite{anasori2017mxenes}.
 
+\noindent\textbf{Critical perspective.}  Evaporation rates exceeding
+$\sim$1.44~kg\,m$^{-2}$\,h$^{-1}$ under 1-sun illumination imply that
+the system harvests thermal energy from the ambient environment in
+addition to the solar flux, since the water vaporisation enthalpy
+($\approx 2.45$~MJ/kg) combined with 1~kW/m$^2$ yields a
+thermodynamic maximum of $\approx 1.47$~kg\,m$^{-2}$\,h$^{-1}$ at
+100\% efficiency.  While such ``super-efficiency'' is physically
+permissible if the evaporator acts as a heat pump drawing from
+environmental enthalpy, comparisons between systems are meaningful
+only when the same efficiency accounting convention is
+applied~\cite{zhou2016solar}.  Several recent studies have adopted
+non-standard definitions---dividing the evaporation enthalpy flux by
+the \textit{absorbed} (rather than incident) solar flux---which can
+significantly inflate reported efficiency numbers.
+
 %% ============================================================
 \section{Wearable Sensors and Point-of-Care Diagnostics}
 \label{sec:sensors}
@@ -448,12 +519,16 @@ innovations with machine-learning algorithms to interpret complex
 spectral data, improving specificity and reducing false-positive
 rates~\cite{kim2019wearable}.
 
-SERS substrates can be engineered to provide electromagnetic
-field-enhancement factors exceeding $10^{8}$, enabling single-molecule
-sensitivity~\cite{leru2007surface}.  A comprehensive understanding of
-these enhancement factors, spanning both chemical and electromagnetic
-contributions, is essential for the design of quantitative wearable
-sensors~\cite{leru2007surface}.  Systematic characterisation of the
+SERS substrates can be engineered to provide average electromagnetic
+field-enhancement factors of order $10^{7}$--$10^{8}$, sufficient for
+single-molecule sensitivity at ``hot spots'' where the local
+enhancement can reach $10^{10}$--$10^{11}$~\cite{leru2007surface}.  A
+critical distinction drawn by Le Ru et al.\ is that single-molecule
+SERS typically occurs at a tiny fraction of active sites on an
+otherwise moderate substrate; quoting only the single-molecule
+enhancement factor without context of hot-spot density can be
+misleading for quantitative sensor design~\cite{leru2007surface}.
+Systematic characterisation of the
 axial SERS response reveals a Lorentzian signal profile along the
 optical axis, underlining the importance of focus precision for
 reproducible wearable measurements~\cite{ding2016nanostructure}.
@@ -477,6 +552,23 @@ settings~\cite{anasori2017mxenes,kim2019wearable}.  The combination of
 MXene substrates with plasmonic enhancement further amplifies
 signal-to-noise ratios, promising multiplex sensing of biomarkers from a
 single micro-volume sample~\cite{gogotsi2019rise}.
+
+\subsection{Tip-Enhanced Raman Spectroscopy}
+
+Tip-enhanced Raman spectroscopy~(TERS) bridges the gap between diffraction-
+limited far-field SERS and true nanoscale chemical imaging.  A metallic
+scanning-probe tip acts as a single plasmonic antenna, concentrating the
+excitation field into a sub-10~nm apex volume.  Zhang et al.\ demonstrated
+sub-nanometre spatial resolution TERS on a single porphyrin molecule,
+resolving individual chemical bonds with an effective electromagnetic
+enhancement exceeding $10^9$~\cite{zhang2013chemically}.  This achievement
+established TERS as the de facto tool for single-molecule vibrational
+spectroscopy at surfaces, with direct implications for
+heterogeneous catalysis monitoring, DNA sequencing, and two-dimensional
+material defect characterisation.  The main practical limitations are
+tip reproducibility, thermal drift in the tip-sample junction, and
+the requirement for ultra-low-vibration environments that currently
+restrict TERS to specialist laboratories~\cite{zhang2013chemically,ding2016nanostructure}.
 
 %% ============================================================
 \section{Thermal Management and Loss Mitigation in Integrated Circuits}
@@ -518,15 +610,16 @@ Solid-State Transistor & Tunable heat flow & Experimental \\
 \end{table}
 
 Materials with ultrahigh thermal conductivity, such as boron arsenide
-(BAs, 1300~W\,m$^{-1}$K$^{-1}$) and boron phosphide, have set new
-conductivity benchmarks~\cite{tian2018unusual}.  Phonon band-structure
-engineering has reduced thermal boundary resistance~(TBR) at GaN
-interfaces by more than eightfold compared to GaN/diamond interfaces,
-markedly lowering hotspot temperatures in high-power
-devices~\cite{tian2018unusual}.  Graphene-based thermal interface
+(BAs, $\approx$1300~W\,m$^{-1}$K$^{-1}$ in bulk single crystals) and
+boron phosphide, have set new conductivity benchmarks~\cite{tian2018unusual}.
+These values are comparable to diamond and are achieved through a
+bunching of acoustic phonon branches that suppresses Umklapp
+scattering~\cite{tian2018unusual}.  Graphene-based thermal interface
 materials provide more than a tenfold improvement over conventional
 thermal greases, accelerating heat spreading in densely integrated
-photonic chips~\cite{balandin2011thermal}.
+photonic chips~\cite{balandin2011thermal}.  Reduction of thermal
+boundary resistance~(TBR) at heterointerfaces remains a key challenge
+for all high-density photonic and electronic circuits.
 
 \subsection{Compensating Losses via Optical Gain Integration}
 
@@ -537,11 +630,15 @@ long-range SPPs by embedding the plasmonic waveguide in a dipolar gain
 medium, achieving net signal amplification that compensates propagation
 losses~\cite{deleon2010amplification}.  This constitutes a viable
 pathway for loss-sensitive applications in photonic circuits and
-sub-diffraction-limit imaging~\cite{deleon2010amplification}.  Combined
-with recent proposals for synthetic optical excitation at complex
-frequencies, these techniques enable dramatically enhanced effective
-propagation distances without physical gain
-saturation~\cite{haffner2015allplasmonic}.
+sub-diffraction-limit imaging~\cite{deleon2010amplification}.  The
+all-plasmonic Mach-Zehnder modulator reported by Haffner et al.\ is a
+complementary demonstration that accepts Ohmic loss as a design
+variable, achieving record footprint ($<10~\mu$m active length) by
+trading propagation distance for extreme field
+confinement~\cite{haffner2015allplasmonic}.  Combined with recent
+proposals for excitation at complex frequencies to temporarily overcome
+passive loss bounds, these techniques motivate continued exploration of
+gain-plasmonic hybrid architectures.
 
 %% ============================================================
 \section{Active Tunable Metasurfaces and Reconfigurable Optics}
@@ -563,7 +660,13 @@ that a sub-wavelength VO$_2$ film can provide thermally switchable, near-unity
 absorption across the mid-infrared, establishing a benchmark for
 ultra-thin tunable perfect absorbers~\cite{kats2012ultraa}.  Upon
 thermally inducing the phase transition, absorption resonances can be
-spectrally tuned across tens of nanometres~\cite{kats2012ultraa}.
+spectrally tuned across tens of nanometres~\cite{kats2012ultraa}.  An
+important practical limitation is the pronounced thermal hysteresis of
+VO$_2$: the insulator-to-metal transition on heating occurs at
+$\approx$68\,$^\circ$C while the reverse metal-to-insulator transition
+on cooling occurs at $\approx$58\,$^\circ$C, producing a
+$\sim$10\,$^\circ$C hysteresis window that complicates precise analog
+reconfigurability~\cite{chen2016metasurface}.
 
 Non-volatile PCMs such as GeSbTe~(GST) and GeSbSeTe~(GSST) retain their
 phase state after the initial stimulus is removed, making them ideal for
@@ -571,7 +674,12 @@ programmable photonics and optical memory~\cite{wang2016optically}.
 Wang et al.\ demonstrated optically reconfigurable metasurfaces and
 photonic devices using GST phase transitions, achieving on-demand pixel-wise
 control of amplitude and phase, enabling varifocal lensing and dynamic
-holography~\cite{wang2016optically,shaltout2019spatiotemporal}.
+holography~\cite{wang2016optically,shaltout2019spatiotemporal}.  A
+key challenge for non-volatile PCMs is write endurance: GST undergoes
+material redistribution and void formation after $10^4$--$10^6$ switching
+cycles, whereas GSST offers improved optical contrast in the
+telecommunications C-band and better film stability but with reduced
+refractive index contrast relative to GST~\cite{wang2016optically}.
 
 \subsection{Hybrid Dielectric-Plasmonic Resonators}
 
@@ -608,11 +716,16 @@ R2R-NIL provides continuous patterning of complex nanostructures on
 flexible polymers, glass foils, and thin
 films~\cite{kooy2014review,ahn2008high}.  UV-curing imprint engines can
 replicate gratings, metasurfaces, and diffractive optical elements with
-sub-100~nm resolution at linear speeds from 0.005 to
-50~m/min~\cite{ahn2008high}.  This technology is currently being adopted
-for augmented and virtual reality~(AR/VR) waveguide manufacturing,
-which demands high refractive indices, low surface roughness, and precise
-slanted or blazed grating geometries~\cite{kooy2014review}.
+sub-100~nm resolution~\cite{ahn2008high}.  Achievable speeds span a
+wide range depending on feature size: coarse structures
+($>$200~nm pitch) can be replicated at tens of metres per minute,
+whereas sub-100~nm features impose strict resist-flow and mould-filling
+constraints that typically limit throughput to below $\sim$1~m/min to
+maintain dimensional fidelity~\cite{ahn2008high,kooy2014review}.  This
+technology is currently being adopted for augmented and virtual
+reality~(AR/VR) waveguide manufacturing, which demands high refractive
+indices, low surface roughness, and precise slanted or blazed grating
+geometries~\cite{kooy2014review}.
 
 \begin{table}[H]
 \small
@@ -635,10 +748,14 @@ Substrate & Flexible & Rigid & Wafer \\
 \end{table}
 
 Template stripping---a technique reported by Nagpal et al.\ for producing
-ultrasmooth patterned metal films~\cite{nagpal2009ultrasmooth}---has
-been extended to stretchable polydimethylsiloxane~(PDMS) substrates,
-creating gold nanohole arrays and pyramid-tip antennas whose optical
-resonances can be mechanically tuned by stretching the underlying
+ultrasmooth patterned metal films with surface roughness below
+0.5~nm~\cite{nagpal2009ultrasmooth}---yields plasmonic substrates whose
+low-roughness interfaces reduce radiation scattering losses and produce
+sharper resonances than conventional lift-off or etch processes.
+This approach has since been adapted to flexible and stretchable
+substrates, where gold nanohole arrays and pyramid-tip antennas on
+elastomeric films exhibit optical resonances that can be mechanically
+tuned by stretching the underlying
 film~\cite{nagpal2009ultrasmooth}.  This mechanical tunability adds a
 new degree of freedom unavailable to rigid plasmonic substrates.
 
@@ -659,55 +776,156 @@ metasurface development beyond specialist computational
 electromagnetics groups.
 
 %% ============================================================
+\section{Van~der~Waals Polaritonics and Graphene Plasmonics}
+\label{sec:vdw}
+
+A major research frontier that was not adequately represented in earlier
+plasmonics reviews is the broader family of \textit{polaritons} in
+two-dimensional and van~der~Waals~(vdW) materials, most notably
+graphene plasmons and phonon-polaritons in hexagonal boron
+nitride~(hBN).  These systems extend plasmonic confinement far
+beyond what noble metals can achieve and operate in spectral regimes
+inaccessible to conventional metal nanostructures.
+
+\subsection{Graphene Plasmons}
+
+Graphene supports transverse magnetic~(TM) plasmons whose wavelength
+is compressed to $\lambda/100$--$\lambda/300$ of the free-space value
+in the terahertz and mid-infrared spectral
+ranges~\cite{grigorenko2012graphene}.  Unlike metal plasmons---whose
+carrier density is fixed by crystal stoichiometry---graphene plasmons
+are continuously gate-tunable: electrostatic gating shifts the Fermi
+energy by hundreds of meV, shifting the plasmon resonance frequency
+across the entire mid-infrared and dramatically changing its
+amplitude~\cite{grigorenko2012graphene}.  Near-field scanning optical
+microscopy measurements have directly imaged graphene plasmon
+polaritons propagating as standing waves from edges and defects,
+confirming the predicted extreme
+confinement~\cite{grigorenko2012graphene}.
+
+The main limitation of graphene plasmons at room temperature is finite
+momentum lifetime: impurity scattering and phonon emission in the
+SiO$_2$ substrate reduce carrier mean free paths and hence plasmon
+propagation lengths.  Encapsulation with hBN, which provides an
+atomically flat, phonon-free surface, can increase carrier
+mobilities to $>$100\,000~cm$^2$V$^{-1}$s$^{-1}$ and plasmon
+quality factors to $>$50 at room
+temperature~\cite{grigorenko2012graphene}.
+
+\subsection{Phonon-Polaritons in Hexagonal Boron Nitride}
+
+Hexagonal boron nitride~(hBN) supports hyperbolic phonon-polaritons
+(HPhPs) within two Reststrahlen bands where $\mathrm{Re}[\varepsilon_x]$
+and $\mathrm{Re}[\varepsilon_z]$ have opposite signs, yielding an
+isofrequency surface that is hyperbolic in $k$-space~\cite{caldwell2014sub}.
+These modes propagate with extreme spatial confinement
+($\lambda_\mathrm{p}/\lambda_0 \sim 1/60$) and quality factors
+exceeding 40 at room temperature---more than an order of magnitude
+higher than noble-metal plasmons at equivalent
+wavelengths~\cite{caldwell2014sub}.  The hyperbolic dispersion
+also enables sub-diffractional imaging and nanoscale heat transfer
+exceeding Planck's blackbody limit by orders of
+magnitude~\cite{caldwell2014sub}.
+
+A critically important distinction from metal plasmonics is that HPhPs
+in hBN are supported by phonon motion rather than free-electron
+oscillation; consequently they are confined to the two Reststrahlen
+bands ($\approx$760--825~cm$^{-1}$ and $\approx$1370--1610~cm$^{-1}$)
+and cannot be continuously spectrally tuned via gating.  Hybridising
+hBN with graphene or other 2D conductors creates gate-tunable
+phonon-plasmon-polaritons that partially overcome this restriction.
+
+\subsection{Picocavity Effects and Quantum Corrections}
+
+As plasmonic nano-gaps are reduced below $\sim$1~nm, classical
+electromagnetic modelling based on bulk permittivities breaks down.
+Quantum corrections---including electron-density spill-out, non-local
+screening, and optical tunnelling---alter the resonance frequency and
+field enhancement relative to classical
+predictions~\cite{benz2016single}.  Benz et al.\ demonstrated that
+individual atomic-scale protrusions in a sub-nanometre gap
+spontaneously form and dissolve thermally, creating ultraconfined
+``picocavities'' with mode volumes of order
+$(1~\text{\AA})^3$~\cite{benz2016single}.  These picocavities can
+enhance vibrational spectroscopy signals by an additional factor of
+$\sim$$10^3$ over a conventional nanogap, enabling observation of the
+Raman spectrum of a single chemical bond as a function of time.
+This work signals the entry of plasmonics into the quantum-mechanical
+regime even for room-temperature, classical metallic
+structures~\cite{benz2016single}.
+
+%% ============================================================
 \section{Outlook and Conclusions}
 \label{sec:conclusions}
 
-Plasmonics stands at a pivotal juncture.  The field has matured from
-fundamental studies of light-metal interactions into a broad technology
-platform that bridges quantum science, energy, healthcare, and
-semiconductor manufacturing.  Several overarching trends will define the
-next decade:
+Plasmonics stands at a pivotal juncture, but progress towards
+technological deployment has been uneven across the subfields reviewed
+here.  Some areas---notably all-plasmonic modulators and SERS-based
+point-of-care diagnostics---have reached early commercial adoption,
+while others, particularly room-temperature quantum plasmonic sources
+and large-scale solar-steam systems, face challenges that have been
+understated in much of the recent literature.  The following trends
+will likely define the next decade, alongside honest assessment of the
+remaining hurdles:
 
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
   \item \textbf{Time-varying and active media.}  The integration of ENZ
     materials and phase-change media with time-varying electromagnetic
-    environments will unlock non-reciprocal optical devices, photonic
-    time crystals, and Floquet-engineered metamaterials~\cite{engheta2013pursuing,liberal2017near}.
+    environments will unlock non-reciprocal optical devices and
+    Floquet-engineered metamaterials~\cite{engheta2013pursuing,liberal2017near,shaltout2019spatiotemporal}.
+    The terminology ``time crystals'' in the photonic context should be
+    distinguished from the quantum many-body phenomenon, and the
+    transition from single-element demonstrations to integrated chips
+    requires solving thermal cross-talk and drive-latency issues.
 
   \item \textbf{Sustainable, CMOS-compatible materials.}  The replacement
     of noble metals with TMNs, TCOs, and MXenes will enable mass
-    production of plasmonic components within existing semiconductor
-    foundry infrastructure~\cite{guler2015refractory,naik2013alternative}.
+    production within existing foundry infrastructure~\cite{guler2015refractory,naik2013alternative},
+    but oxidation stability (TiN, MXenes) and CMOS contamination
+    (ITO containing indium) remain open engineering challenges.
 
   \item \textbf{Quantum advantage at room temperature.}  Room-temperature
     single-photon emission from rare-earth ions~\cite{dibos2018atomic},
-    combined with plasmonic enhancement of light-matter coupling, will
-    accelerate the deployment of quantum-secure communications.
+    combined with plasmonic enhancement of light-matter coupling, is a
+    compelling long-term goal; however, pure dephasing rates at 300~K
+    remain orders of magnitude larger than at cryogenic temperatures.
 
   \item \textbf{Convergence with AI.}  Inverse design algorithms trained
-    on large experimental datasets will enable the automated discovery of
-    new plasmonic geometries with functionalities inaccessible through
-    intuition-guided design~\cite{malkiel2018plasmonic}.
+    on large experimental datasets will enable discovery of new plasmonic
+    geometries~\cite{malkiel2018plasmonic}; systematic dataset curation
+    and uncertainty quantification are critical prerequisites to avoid
+    overfit models.
+
+  \item \textbf{Van der Waals polaritonics.}  Graphene plasmons and hBN
+    phonon-polaritons provide confinement and quality factors
+    inaccessible to metals~\cite{grigorenko2012graphene,caldwell2014sub};
+    hybrid van~der~Waals/metallic structures represent the next frontier.
 
   \item \textbf{Wearable and implantable photonics.}  The mechanical
     flexibility of MXene and NIL-patterned substrates, combined with
-    on-chip signal processing, will realise truly wearable plasmonic
-    spectrometers for continuous personal health
-    monitoring~\cite{kim2019wearable,gogotsi2019rise}.
+    on-chip signal processing, will realise wearable plasmonic
+    spectrometers~\cite{kim2019wearable,gogotsi2019rise}; biocompatibility
+    and sterilisation protocols for implantable variants require
+    dedicated investigation.
 
   \item \textbf{Thermal co-design.}  As photonic integration densities
-    rival those of microelectronics, thermal management will become a
+    rival microelectronics, thermal management must be a
     first-class design variable, necessitating co-simulation of optical,
     electrical, and thermal domains~\cite{garimella2008thermal,tian2018unusual}.
 \end{enumerate}
 
 In summary, the advances reviewed here demonstrate that plasmonics has
-transcended its origins as a curiosity of condensed matter physics to
-become an enabling platform technology with transformative impact across
-science and engineering.  The challenges that remain---particularly loss
-mitigation, scalable quantum-coherent integration, and reliable
-nanofabrication at wafer scale---are formidable but tractable given the
-rapid pace of innovation documented in this review.
+broadened from a condensed matter physics curiosity into an enabling
+technology platform.  However, a rigorous reading of the literature
+reveals that several widely cited performance claims require important
+caveats: evaporation efficiencies exceeding the solar thermodynamic
+limit rely on environmental enthalpy harvesting; TiN thermal robustness
+applies only in non-oxidising atmospheres; reported single-molecule SERS
+enhancement factors apply to a small fraction of hot-spot sites; and
+quantum-optical demonstrations in plasmonic circuits remain predominantly
+cryogenic.  Addressing these nuances honestly is essential for the field
+to set realistic milestones and avoid overselling timelines for
+commercial deployment.
 
 %% ============================================================
 \section*{Declarations}
